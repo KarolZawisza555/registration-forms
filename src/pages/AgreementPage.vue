@@ -1,59 +1,70 @@
 <template>
-  <q-card bordered class="my-card bg-grey-1">
-    <q-card-section>
-      <div class="row items-center no-wrap">
-        <div class="col">
-          <div class="text-h4">Agreement </div>
-        </div>
-      </div>
-    </q-card-section>
-    <q-card-section class="card-space items-center">
-      <transition name="rotate">
-        <q-scroll-area v-if="showScroll" visible :thumb-style="thumbStyle" :content-style="contentStyle"
-          :content-active-style="contentActiveStyle" class="q-ma-sm" style="height: 500px; ">
-          <p class="q-ma-md">
-            {{ lorem }}
-          </p>
-        </q-scroll-area>
-      </transition>
-    </q-card-section>
-    <q-separator></q-separator>
-    <q-card-actions>
-      <q-space />
-      <q-space />
-      <q-btn flat to="/">Back</q-btn>
-      <q-btn flat>Next</q-btn>
-      <q-space />
-    </q-card-actions>
-  </q-card>
+	<q-card
+		bordered
+		class="my-card bg-grey-1">
+		<q-card-section>
+			<div class="row items-center no-wrap">
+				<div class="col">
+					<div class="text-h4">Agreement</div>
+				</div>
+			</div>
+		</q-card-section>
+		<q-card-section class="card-space items-center">
+			<transition name="rotate">
+				<q-scroll-area
+					v-if="showScroll"
+					visible
+					:thumb-style="thumbStyle"
+					:content-style="contentStyle"
+					:content-active-style="contentActiveStyle"
+					class="q-ma-sm"
+					style="height: 500px">
+					<p class="q-ma-md">
+						{{ lorem }}
+					</p>
+				</q-scroll-area>
+			</transition>
+		</q-card-section>
+		<q-separator></q-separator>
+		<q-card-actions>
+			<q-space />
+			<q-space />
+			<q-btn
+				flat
+				to="/"
+				>Back</q-btn
+			>
+			<q-btn flat>Next</q-btn>
+			<q-space />
+		</q-card-actions>
+	</q-card>
 </template>
 
 <script>
-import { defineComponent } from 'vue';
-import 'vue-transitions-css';
-
+import { defineComponent } from "vue";
+import "vue-transitions-css";
 
 export default defineComponent({
-  name: 'AgreementPage',
-  data() {
-    return {
-      showScroll: false,
-      contentStyle: {
-        backgroundColor: 'rgba(0,0,0,0.02)',
-        color: '#555'
-      },
-      contentActiveStyle: {
-        backgroundColor: '#fff',
-        color: 'black'
-      },
-      thumbStyle: {
-        right: '2px',
-        borderRadius: '5px',
-        backgroundColor: '#027be3',
-        width: '5px',
-        opacity: '0.75'
-      },
-      lorem: `Lorem ipsum dolor sit amet. Et sapiente fugiat est nobis reiciendis in ducimus officia et
+	name: "AgreementPage",
+	data() {
+		return {
+			showScroll: false,
+			contentStyle: {
+				backgroundColor: "rgba(0,0,0,0.02)",
+				color: "#555",
+			},
+			contentActiveStyle: {
+				backgroundColor: "#fff",
+				color: "black",
+			},
+			thumbStyle: {
+				right: "2px",
+				borderRadius: "5px",
+				backgroundColor: "#027be3",
+				width: "5px",
+				opacity: "0.75",
+			},
+			lorem: `Lorem ipsum dolor sit amet. Et sapiente fugiat est nobis reiciendis in ducimus officia et
         enim laborum ut voluptatum quas ut eaque doloremque ea voluptatem veniam. Qui obcaecati aperiam 33
         accusamus impedit et galisum deleniti qui cumque enim ut cumque voluptas sit repudiandae autem.
         Aut corporis iste aut quia ratione aut rerum excepturi qui quia corrupti? Et inventore impedit
@@ -153,45 +164,44 @@ export default defineComponent({
         et quia optio et iure totam est dignissimos tenetur At facilis perspiciatis qui tempore molestiae.
         Sed consequatur molestiae et alias sequi et accusamus accusamus 33 ducimus facere ut beatae harum
         et tempora incidunt.`,
-    }
-  },
-  created() {
-    this.interval = setInterval(() => this.showScroll = true, 200);
-  },
-})
+		};
+	},
+	created() {
+		this.interval = setInterval(() => (this.showScroll = true), 200);
+	},
+});
 </script>
 
 <style>
 .my-card {
-  min-width: 200px;
-  width: 100%;
-  max-width: 900px;
+	min-width: 200px;
+	width: 100%;
+	max-width: 900px;
 }
 
 .card-space {
-  min-height: 600px;
-  height: 100%;
-  max-height: 800px;
-
+	min-height: 600px;
+	height: 100%;
+	max-height: 800px;
 }
 
 @keyframes rotate {
-  0% {
-    opacity: 0;
-    transform: scale(0.1) rotate(-30deg);
-  }
+	0% {
+		opacity: 0;
+		transform: scale(0.1) rotate(-30deg);
+	}
 
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-  }
+	100% {
+		opacity: 1;
+		transform: scale(1) rotate(0deg);
+	}
 }
 
 .rotate-enter-active {
-  animation: rotate 0.6s;
+	animation: rotate 0.6s;
 }
 
 .rotate-leave-active {
-  animation: rotate 0.6s reverse;
+	animation: rotate 0.6s reverse;
 }
 </style>
