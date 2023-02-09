@@ -3,7 +3,17 @@
 	"editor.guides.bracketPairs": true,
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"editor.codeActionsOnSave": ["source.fixAll.eslint"],
-	"eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
-	"nuxt.isNuxtApp": false
+	"editor.codeActionsOnSave": [
+		"source.fixAll.eslint"
+	],
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"vue"
+	],
+	"nuxt.isNuxtApp": false,
+	"[vue]": {
+		"editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+	}
 }

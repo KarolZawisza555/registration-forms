@@ -24,6 +24,14 @@
 					</p>
 				</q-scroll-area>
 			</transition>
+			<div class="row justify-center">
+				<q-radio
+					v-model="confirm"
+					checked-icon="task_alt"
+					unchecked-icon="panorama_fish_eye"
+					val="line"
+					label="Accept" />
+			</div>
 		</q-card-section>
 		<q-separator></q-separator>
 		<q-card-actions>
@@ -34,7 +42,12 @@
 				to="/"
 				>Back</q-btn
 			>
-			<q-btn flat>Next</q-btn>
+			<q-btn
+				:disable="!confirm"
+				flat
+				to="/login"
+				>Next</q-btn
+			>
 			<q-space />
 		</q-card-actions>
 	</q-card>
@@ -48,6 +61,7 @@ export default defineComponent({
 	name: "AgreementPage",
 	data() {
 		return {
+			confirm: false,
 			showScroll: false,
 			contentStyle: {
 				backgroundColor: "rgba(0,0,0,0.02)",
